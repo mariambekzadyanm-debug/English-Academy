@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Academy - Learn with Emma</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>English Academy - Learn English Online</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,1240 +13,789 @@
         }
 
         body {
-            font-family: 'Nunito', sans-serif;
-            color: #4a4a4a;
+            font-family: 'Inter', sans-serif;
+            background: #f0f0f5;
+            color: #1a1a2e;
             overflow-x: hidden;
-            background: #fff;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Fredoka One', cursive;
         }
 
         /* ========== NAVIGATION ========== */
-        nav {
-            background: #fff;
-            padding: 20px 0;
+        .top-nav {
+            background: #f0f0f5;
+            padding: 18px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .logo {
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.8rem;
-            color: #e8a87c;
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: #85cdca;
         }
 
         .nav-links {
             display: flex;
-            gap: 35px;
+            gap: 30px;
             list-style: none;
-            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #4a4a4a;
-            font-weight: 700;
+            color: #1a1a2e;
+            font-weight: 600;
             font-size: 0.95rem;
             transition: color 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #e8a87c;
+        .nav-links a:hover {
+            color: #6c5ce7;
         }
 
-        .nav-btn {
-            background: #e8a87c;
-            color: white !important;
-            padding: 12px 30px;
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-login {
+            padding: 10px 24px;
+            border: 2px solid #6c5ce7;
             border-radius: 50px;
-            transition: transform 0.3s, box-shadow 0.3s !important;
+            background: transparent;
+            color: #6c5ce7;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
         }
 
-        .nav-btn:hover {
+        .btn-login:hover {
+            background: #6c5ce7;
+            color: white;
+        }
+
+        .btn-signup {
+            padding: 10px 24px;
+            border: none;
+            border-radius: 50px;
+            background: #6c5ce7;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-signup:hover {
+            background: #5a4bd1;
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(232, 168, 124, 0.4);
+            box-shadow: 0 5px 20px rgba(108, 92, 231, 0.4);
+        }
+
+        /* ========== MAIN WRAPPER ========== */
+        .page-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 60px rgba(0,0,0,0.08);
         }
 
         /* ========== HERO SECTION ========== */
         .hero {
-            background: linear-gradient(135deg, #fef9ef 0%, #fff5f5 50%, #f0f9ff 100%);
-            padding: 80px 0 120px;
+            background: #f0f0f5;
+            padding: 40px 40px 50px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .hero-card {
+            background: #FFD93D;
+            border-radius: 24px;
+            padding: 50px 45px;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '✨';
-            position: absolute;
-            top: 15%;
-            left: 8%;
-            font-size: 2rem;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .hero::after {
-            content: '⭐';
-            position: absolute;
-            top: 25%;
-            right: 10%;
-            font-size: 1.5rem;
-            animation: float 3s ease-in-out infinite 1.5s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-text .tagline {
-            display: inline-block;
-            background: #ffd6e0;
-            color: #d4728c;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero-text h1 {
-            font-size: 3.5rem;
-            color: #4a4a4a;
-            line-height: 1.2;
+        .hero-card h1 {
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: #1a1a2e;
+            line-height: 1.15;
             margin-bottom: 20px;
         }
 
-        .hero-text h1 span {
-            color: #e8a87c;
-            position: relative;
-        }
-
-        .hero-text h1 span::after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            width: 100%;
-            height: 12px;
-            background: #ffd6e0;
-            z-index: -1;
-            border-radius: 10px;
-        }
-
-        .hero-text p {
-            font-size: 1.15rem;
-            color: #666;
+        .hero-card p {
+            font-size: 1.05rem;
+            color: #333;
+            line-height: 1.7;
             margin-bottom: 30px;
-            line-height: 1.8;
+            max-width: 480px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 20px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
-        .btn-primary {
-            background: #e8a87c;
-            color: white;
-            padding: 16px 40px;
+        .hero-btn-login {
+            padding: 12px 28px;
+            border: 2px solid #1a1a2e;
             border-radius: 50px;
-            text-decoration: none;
+            background: transparent;
+            color: #1a1a2e;
             font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.3s;
-            display: inline-block;
-            border: none;
+            font-size: 0.95rem;
             cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(232, 168, 124, 0.4);
-        }
-
-        .btn-secondary {
-            background: white;
-            color: #4a4a4a;
-            padding: 16px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
             transition: all 0.3s;
-            display: inline-block;
-            border: 2px solid #e8a87c;
+            text-decoration: none;
         }
 
-        .btn-secondary:hover {
-            background: #e8a87c;
+        .hero-btn-login:hover {
+            background: #1a1a2e;
+            color: #FFD93D;
+        }
+
+        .hero-btn-signup {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 50px;
+            background: #6c5ce7;
             color: white;
-            transform: translateY(-3px);
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .hero-btn-signup:hover {
+            background: #5a4bd1;
+            transform: translateY(-2px);
         }
 
         .hero-image {
-            text-align: center;
+            border-radius: 24px;
+            overflow: hidden;
+            background: #6c5ce7;
             position: relative;
         }
 
         .hero-image img {
-            max-width: 100%;
-            height: auto;
-            max-height: 550px;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
-            transition: transform 0.5s;
-        }
-
-        .hero-image:hover img {
-            transform: scale(1.05) rotate(-2deg);
-        }
-
-        .hero-badge {
-            position: absolute;
-            background: white;
-            padding: 15px 25px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            font-weight: 700;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .hero-badge.top {
-            top: 5%;
-            right: 5%;
-            color: #85cdca;
-        }
-
-        .hero-badge.bottom {
-            bottom: 10%;
-            left: 0;
-            color: #e8a87c;
-        }
-
-        /* ========== WAVE DIVIDERS ========== */
-        .wave-divider {
             width: 100%;
-            overflow: hidden;
-            line-height: 0;
-        }
-
-        .wave-divider svg {
-            width: 100%;
-            height: 80px;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
 
-        .wave-divider.flip {
-            transform: rotate(180deg);
+        .hero-image-placeholder {
+            width: 100%;
+            height: 100%;
+            min-height: 380px;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
         }
 
-        /* ========== PROGRAMS SECTION ========== */
-        .programs {
-            background: #fef9ef;
-            padding: 100px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-label {
-            display: inline-block;
-            background: #ffd6e0;
-            color: #d4728c;
-            padding: 8px 25px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-        }
-
-        .section-header h2 {
-            font-size: 2.8rem;
-            color: #4a4a4a;
-            margin-bottom: 15px;
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: #888;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .programs-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .program-card {
+        /* ========== FEATURES SECTION ========== */
+        .features-section {
+            padding: 80px 40px;
             background: white;
-            border-radius: 25px;
-            padding: 40px 30px;
+        }
+
+        .section-title {
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .program-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #e8a87c, #ffd6e0, #85cdca);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s;
-        }
-
-        .program-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .program-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-        }
-
-        .program-icon {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            margin: 0 auto 25px;
-            transition: transform 0.3s;
-        }
-
-        .program-card:hover .program-icon {
-            transform: scale(1.15) rotate(5deg);
-        }
-
-        .program-card:nth-child(1) .program-icon { background: #fff5f5; }
-        .program-card:nth-child(2) .program-icon { background: #f0f9ff; }
-        .program-card:nth-child(3) .program-icon { background: #f0fff4; }
-
-        .program-card h3 {
-            font-size: 1.5rem;
-            color: #4a4a4a;
-            margin-bottom: 15px;
-        }
-
-        .program-card p {
-            color: #888;
-            line-height: 1.7;
-            margin-bottom: 25px;
-        }
-
-        .program-link {
-            color: #e8a87c;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s;
-        }
-
-        .program-link:hover {
-            color: #d4728c;
-            letter-spacing: 2px;
-        }
-
-        /* ========== ABOUT TEACHER ========== */
-        .about-teacher {
-            background: #fff;
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .about-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .about-image {
-            position: relative;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 30px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-            transition: transform 0.5s;
-        }
-
-        .about-image:hover img {
-            transform: scale(1.02);
-        }
-
-        .about-image .decoration {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            z-index: -1;
-        }
-
-        .about-image .decoration.pink {
-            background: #ffd6e0;
-            top: -20px;
-            left: -20px;
-        }
-
-        .about-image .decoration.blue {
-            background: #d4f1f4;
-            bottom: -20px;
-            right: -20px;
-        }
-
-        .about-text .teacher-label {
-            display: inline-block;
-            background: #d4f1f4;
-            color: #5ba4a8;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-        }
-
-        .about-text h2 {
             font-size: 2.8rem;
-            color: #4a4a4a;
-            margin-bottom: 20px;
-        }
-
-        .about-text h2 span {
-            color: #e8a87c;
-        }
-
-        .about-text p {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 15px;
-            font-size: 1.05rem;
-        }
-
-        .teacher-stats {
-            display: flex;
-            gap: 30px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-            background: #fef9ef;
-            padding: 20px 30px;
-            border-radius: 20px;
-            transition: transform 0.3s;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-family: 'Fredoka One', cursive;
-            font-size: 2.5rem;
-            color: #e8a87c;
-        }
-
-        .stat-label {
-            color: #888;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        /* ========== FEATURED ========== */
-        .featured {
-            background: #f8f9fa;
-            padding: 60px 0;
-        }
-
-        .featured-text {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 700;
-            margin-bottom: 30px;
-        }
-
-        .featured-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-            flex-wrap: wrap;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .featured-logos span {
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.5rem;
-            color: #ccc;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .featured-logos span:hover {
-            color: #e8a87c;
-            transform: scale(1.1);
-        }
-
-        /* ========== RECOMMENDED ========== */
-        .recommended {
-            background: #fef9ef;
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .recommended-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .recommended-text .rec-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #ffd6e0;
-            color: #d4728c;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-
-        .recommended-text h2 {
-            font-size: 2.5rem;
-            color: #4a4a4a;
-            margin-bottom: 10px;
-        }
-
-        .recommended-text .program-name {
-            font-family: 'Fredoka One', cursive;
-            font-size: 3rem;
-            color: #e8a87c;
-            margin-bottom: 20px;
-        }
-
-        .recommended-text p {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            font-size: 1.05rem;
-        }
-
-        .recommended-image {
-            position: relative;
-        }
-
-        .recommended-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-            transition: transform 0.5s;
-        }
-
-        .recommended-image:hover img {
-            transform: scale(1.03);
-        }
-
-        /* ========== TESTIMONIALS ========== */
-        .testimonials {
-            background: #fff;
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .testimonial-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .testimonial-quote {
-            font-size: 1.5rem;
-            color: #4a4a4a;
-            line-height: 1.8;
-            font-style: italic;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .testimonial-quote::before,
-        .testimonial-quote::after {
-            content: '←';
-            color: #e8a87c;
-            font-size: 2rem;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .testimonial-quote::before {
-            left: -40px;
-        }
-
-        .testimonial-quote::after {
-            content: '→';
-            right: -40px;
-        }
-
-        .testimonial-author {
-            font-weight: 700;
-            color: #e8a87c;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.9rem;
-        }
-
-        /* ========== TUNE IN ========== */
-        .tune-in {
-            background: #f0f9ff;
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .tune-in-header {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        .tune-in-header h2 {
-            font-size: 3rem;
-            color: #4a4a4a;
-            display: inline-block;
-            position: relative;
-        }
-
-        .tune-in-header h2::before {
-            content: '↗';
-            position: absolute;
-            top: -30px;
-            left: -40px;
-            color: #e8a87c;
-            font-size: 2rem;
-            transform: rotate(-20deg);
-        }
-
-        .tune-in-header h2::after {
-            content: '🎙️';
-            position: absolute;
-            top: -20px;
-            right: -60px;
-            font-size: 2rem;
-        }
-
-        .tune-in-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .tune-card {
-            background: white;
-            border-radius: 25px;
-            padding: 50px 40px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
-
-        .tune-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-        }
-
-        .tune-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: #ffd6e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin: 0 auto 25px;
-            transition: transform 0.3s;
-        }
-
-        .tune-card:hover .tune-icon {
-            transform: scale(1.15) rotate(10deg);
-        }
-
-        .tune-card:nth-child(2) .tune-icon {
-            background: #d4f1f4;
-        }
-
-        .tune-card h3 {
-            font-size: 1.8rem;
-            color: #4a4a4a;
-            margin-bottom: 15px;
-        }
-
-        .tune-card p {
-            color: #888;
-            line-height: 1.7;
-            margin-bottom: 25px;
-        }
-
-        .episode-list {
-            text-align: left;
-            margin-top: 30px;
-        }
-
-        .episode-list h4 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #999;
-            margin-bottom: 15px;
-        }
-
-        .episode-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid #f0f0f0;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .episode-item:hover {
-            padding-left: 10px;
-            color: #e8a87c;
-        }
-
-        .episode-item span:last-child {
-            color: #e8a87c;
-            font-weight: 700;
-        }
-
-        /* ========== MAILING LIST ========== */
-        .mailing-list {
-            background: linear-gradient(135deg, #ffd6e0 0%, #ffe8d6 100%);
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-        }
-
-        .mailing-content {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .mailing-content .mail-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .mailing-content h2 {
-            font-size: 2.5rem;
-            color: #4a4a4a;
-            margin-bottom: 15px;
-        }
-
-        .mailing-content p {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 1.05rem;
-        }
-
-        .mailing-form {
-            display: flex;
-            gap: 10px;
-            max-width: 500px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .mailing-form input {
-            flex: 1;
-            min-width: 250px;
-            padding: 16px 25px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-family: 'Nunito', sans-serif;
-            outline: none;
-        }
-
-        .mailing-form button {
-            background: #e8a87c;
-            color: white;
-            padding: 16px 35px;
-            border: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-family: 'Nunito', sans-serif;
-        }
-
-        .mailing-form button:hover {
-            background: #d4956a;
-            transform: translateY(-2px);
-        }
-
-        /* ========== FOOTER ========== */
-        footer {
-            background: #4a4a4a;
-            color: white;
-            padding: 80px 0 30px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
+            font-weight: 900;
+            color: #1a1a2e;
             margin-bottom: 50px;
         }
 
-        .footer-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #e8a87c;
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
         }
 
-        .footer-section ul {
-            list-style: none;
+        .feature-card {
+            background: #4834d4;
+            border-radius: 20px;
+            padding: 35px 30px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s, box-shadow 0.4s;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
         }
 
-        .footer-section ul li {
-            margin-bottom: 12px;
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(72, 52, 212, 0.3);
         }
 
-        .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .feature-card p {
             font-size: 0.95rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            flex-grow: 1;
         }
 
-        .footer-section a:hover {
-            color: #e8a87c;
+        .feature-icon {
+            font-size: 4rem;
+            margin-top: auto;
+            align-self: flex-end;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+            transition: transform 0.4s;
         }
 
-        .footer-bottom {
+        .feature-card:hover .feature-icon {
+            transform: scale(1.15) rotate(-5deg);
+        }
+
+        /* ========== MONETIZATION SECTION ========== */
+        .monetization-section {
+            padding: 80px 40px;
+            background: white;
+        }
+
+        .monetization-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .mono-card {
+            border-radius: 20px;
+            padding: 35px 30px;
+            transition: transform 0.4s, box-shadow 0.4s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mono-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .mono-card.white {
+            background: white;
+            border: 2px solid #e8e8f0;
+        }
+
+        .mono-card.blue {
+            background: #6c5ce7;
+            color: white;
+        }
+
+        .mono-card.dark {
+            background: #2d1b69;
+            color: white;
+        }
+
+        .mono-card h3 {
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+
+        .mono-card ul {
+            list-style: none;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .mono-card ul li {
+            padding: 8px 0;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .mono-card ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .mono-card.blue ul li::before,
+        .mono-card.dark ul li::before {
+            color: #FFD93D;
+        }
+
+        .mono-card p {
+            font-size: 0.92rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .btn-details {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.3s;
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #999;
+            align-self: flex-start;
+        }
+
+        .btn-details.outline {
+            border: 2px solid #6c5ce7;
+            color: #6c5ce7;
+            background: transparent;
+        }
+
+        .btn-details.outline:hover {
+            background: #6c5ce7;
+            color: white;
+        }
+
+        .btn-details.light {
+            border: 2px solid rgba(255,255,255,0.5);
+            color: white;
+            background: transparent;
+        }
+
+        .btn-details.light:hover {
+            background: white;
+            color: #6c5ce7;
+        }
+
+        /* ========== FORMATS SECTION ========== */
+        .formats-section {
+            padding: 80px 40px;
+            background: white;
+            position: relative;
+        }
+
+        .formats-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            overflow: hidden;
+        }
+
+        .formats-wave svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .formats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .format-card {
+            background: white;
+            border: 2px solid #e8e8f0;
+            border-radius: 16px;
+            padding: 28px 22px;
+            transition: all 0.4s;
+        }
+
+        .format-card:hover {
+            border-color: #6c5ce7;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(108, 92, 231, 0.15);
+        }
+
+        .format-card h3 {
             font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            color: #1a1a2e;
+            line-height: 1.3;
+        }
+
+        .format-card p {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* ========== NEWSLETTER / CTA SECTION ========== */
+        .newsletter-section {
+            padding: 60px 40px 80px;
+            background: white;
+        }
+
+        .newsletter-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .newsletter-image {
+            border-radius: 24px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+        }
+
+        .newsletter-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .newsletter-right {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .newsletter-main {
+            background: #6c5ce7;
+            border-radius: 24px;
+            padding: 45px 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            flex-grow: 1;
+        }
+
+        .newsletter-main h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .newsletter-main p {
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .newsletter-rocket {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            font-size: 4rem;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+        }
+
+        .newsletter-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .newsletter-card {
+            border-radius: 20px;
+            padding: 30px 25px;
+            transition: transform 0.3s;
+        }
+
+        .newsletter-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .newsletter-card.yellow {
+            background: #FFD93D;
+        }
+
+        .newsletter-card.dark {
+            background: #2d1b69;
+            color: white;
+        }
+
+        .newsletter-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .newsletter-card p {
+            font-size: 0.88rem;
+            line-height: 1.5;
+            margin-bottom: 18px;
+            opacity: 0.9;
+        }
+
+        .btn-subscribe {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-subscribe.dark {
+            background: #1a1a2e;
+            color: white;
+        }
+
+        .btn-subscribe.dark:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        .btn-subscribe.white {
+            background: white;
+            color: #2d1b69;
+        }
+
+        .btn-subscribe.white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            opacity: 0.7;
         }
 
         /* ========== RESPONSIVE ========== */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content,
-            .about-content,
-            .recommended-content,
-            .tune-in-grid {
+        @media (max-width: 900px) {
+            .hero-content {
                 grid-template-columns: 1fr;
             }
 
-            .hero-text h1 {
-                font-size: 2.2rem;
+            .features-grid,
+            .monetization-grid {
+                grid-template-columns: 1fr;
             }
 
-            .section-header h2,
-            .about-text h2,
-            .recommended-text h2 {
+            .formats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .newsletter-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-bottom {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card h1 {
                 font-size: 2rem;
             }
 
-            .recommended-text .program-name {
+            .section-title {
                 font-size: 2rem;
             }
 
-            .tune-in-header h2 {
-                font-size: 2rem;
-            }
-
-            .testimonial-quote::before,
-            .testimonial-quote::after {
+            .nav-links {
                 display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .formats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero, .features-section, .monetization-section,
+            .formats-section, .newsletter-section {
+                padding-left: 20px;
+                padding-right: 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ========== NAVIGATION ========== -->
-    <nav>
+    <!-- Navigation -->
+    <nav class="top-nav">
         <div class="nav-container">
-            <a href="index.html" class="logo">English<span>Academy</span></a>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="contact.html" class="nav-btn">Enroll Now</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#formats">Formats</a></li>
+                <li><a href="#partners">Partners</a></li>
             </ul>
+            <div class="nav-buttons">
+                <a href="#" class="btn-login">Log In</a>
+                <a href="#" class="btn-signup">Sign Up Free</a>
+            </div>
         </div>
     </nav>
 
-    <!-- ========== HERO SECTION ========== -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <span class="tagline">🌟 Welcome to English Academy</span>
-                <h1>Learn English the <span>Fun Way</span> with Emma!</h1>
-                <p>Join thousands of happy students mastering English through interactive lessons, real conversations, and personalized guidance. Your journey to fluency starts here!</p>
-                <div class="hero-buttons">
-                    <a href="courses.html" class="btn-primary">Explore Courses</a>
-                    <a href="about.html" class="btn-secondary">Meet Emma</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <!-- Emma waving - main hero character -->
-                <img src="emma-waving.png" alt="Emma - Your English Teacher">
-                <div class="hero-badge top">⭐ 500+ Students</div>
-                <div class="hero-badge bottom">📚 50+ Lessons</div>
-            </div>
-        </div>
-    </section>
+    <!-- Main Page Wrapper -->
+    <div class="page-wrapper">
 
-    <!-- Wave Divider -->
-    <div class="wave-divider">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#fef9ef"/>
-        </svg>
-    </div>
-
-    <!-- ========== PROGRAMS SECTION ========== -->
-    <section class="programs">
-        <div class="section-header">
-            <span class="section-label">Our Programs</span>
-            <h2>Choose Your Learning Path</h2>
-            <p>From beginners to advanced learners, we have the perfect course for you</p>
-        </div>
-        <div class="programs-grid">
-            <div class="program-card">
-                <div class="program-icon">📖</div>
-                <h3>Grammar Mastery</h3>
-                <p>Build a strong foundation with clear explanations and practical exercises for all grammar topics.</p>
-                <a href="courses.html" class="program-link">Learn More →</a>
-            </div>
-            <div class="program-card">
-                <div class="program-icon">🗣️</div>
-                <h3>Speaking Confidence</h3>
-                <p>Overcome your fear of speaking with real conversations and pronunciation practice.</p>
-                <a href="courses.html" class="program-link">Learn More →</a>
-            </div>
-            <div class="program-card">
-                <div class="program-icon">✈️</div>
-                <h3>Business English</h3>
-                <p>Master professional communication for meetings, presentations, and workplace success.</p>
-                <a href="courses.html" class="program-link">Learn More →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Wave Divider -->
-    <div class="wave-divider flip">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#fff"/>
-        </svg>
-    </div>
-
-    <!-- ========== ABOUT TEACHER ========== -->
-    <section class="about-teacher">
-        <div class="about-content">
-            <div class="about-image">
-                <div class="decoration pink"></div>
-                <div class="decoration blue"></div>
-                <!-- Emma at whiteboard teaching -->
-                <img src="emma-whiteboard.png" alt="Emma Teaching English">
-            </div>
-            <div class="about-text">
-                <span class="teacher-label">👩‍🏫 Your Teacher</span>
-                <h2>Meet <span>Emma</span> Johnson</h2>
-                <p>Hi there! I'm Emma, a certified English teacher with over 8 years of experience helping students from 40+ countries achieve their language goals.</p>
-                <p>I believe learning English should be enjoyable, not stressful. My lessons combine fun activities, real-world practice, and personalized feedback to help you progress quickly.</p>
-                <p>Whether you're preparing for an exam, advancing your career, or just want to travel confidently - I'm here to help you every step of the way!</p>
-                <div class="teacher-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">8+</div>
-                        <div class="stat-label">Years Teaching</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Happy Students</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">40+</div>
-                        <div class="stat-label">Countries</div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-card">
+                    <h1>The Smartest Platform to Master English Online</h1>
+                    <p>Our service helps students, professionals, and language lovers build real fluency through interactive lessons, personalized feedback, and progress tracking that actually works.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="hero-btn-login">Log In</a>
+                        <a href="#" class="hero-btn-signup">Start Learning Free</a>
                     </div>
                 </div>
+                <div class="hero-image">
+                    <div class="hero-image-placeholder">👩‍</div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ========== FEATURED ========== -->
-    <section class="featured">
-        <div class="featured-text">Trusted & Featured In</div>
-        <div class="featured-logos">
-            <span>📰 EduNews</span>
-            <span>🎓 LearnMag</span>
-            <span> GlobalEd</span>
-            <span> LangWorld</span>
-            <span>📚 BookReview</span>
-        </div>
-    </section>
-
-    <!-- Wave Divider -->
-    <div class="wave-divider">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#fef9ef"/>
-        </svg>
-    </div>
-
-    <!-- ========== RECOMMENDED ========== -->
-    <section class="recommended">
-        <div class="recommended-content">
-            <div class="recommended-text">
-                <span class="rec-label">⭐ Recommended</span>
-                <h2>My Most Popular Program</h2>
-                <div class="program-name">Fluent English Journey</div>
-                <p>A comprehensive 12-week program where your English skills truly blossom. From basic conversations to advanced discussions, this course covers everything you need to become confident in English.</p>
-                <p>Includes live sessions, practice materials, homework feedback, and a supportive community of learners from around the world.</p>
-                <a href="courses.html" class="btn-primary">Enroll Now</a>
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <h2 class="section-title">Platform Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Advanced Learning Paths</h3>
+                    <p>A wide range of skill levels and flexible settings let you focus on exactly what you need — whether it's grammar, speaking, or exam preparation tailored to your goals.</p>
+                    <div class="feature-icon">🚀</div>
+                </div>
+                <div class="feature-card">
+                    <h3>All Tools in One Dashboard</h3>
+                    <p>Manage your lessons, track vocabulary, review grammar notes, and monitor progress — all from a single, clean interface designed for focused learning.</p>
+                    <div class="feature-icon">🎲</div>
+                </div>
+                <div class="feature-card">
+                    <h3>Detailed Progress Analytics</h3>
+                    <p>Statistics by topic, skill area, and time period help you see exactly where you're improving. Reports are available right in your dashboard and as downloadable files.</p>
+                    <div class="feature-icon">📱</div>
+                </div>
             </div>
-            <div class="recommended-image">
-                <!-- Emma with books - recommended program -->
-                <img src="emma-books.png" alt="Emma with Learning Materials">
+        </section>
+
+        <!-- Monetization / Courses Section -->
+        <section class="monetization-section" id="courses">
+            <h2 class="section-title">Advanced Learning Models</h2>
+            <div class="monetization-grid">
+                <div class="mono-card white">
+                    <h3>Course Subscription Models</h3>
+                    <ul>
+                        <li>Monthly access to the full English Academy library</li>
+                        <li>Pay-per-course options for specific skills</li>
+                        <li>Manage group classes and private tutoring sessions</li>
+                    </ul>
+                    <a href="#" class="btn-details outline">Learn More</a>
+                </div>
+                <div class="mono-card blue">
+                    <h3>Dynamic Skill Adaptation</h3>
+                    <p>Gives every learner the ability to receive content that adjusts to their level in real time — bringing together grammar drills, conversation practice, and interactive exercises in one smooth experience.</p>
+                    <a href="#" class="btn-details light">Learn More</a>
+                </div>
+                <div class="mono-card dark">
+                    <h3>Smart Lesson Technology</h3>
+                    <p>Our adaptive technology lets the platform automatically choose the right difficulty, topic, and exercise type for each student — keeping them challenged but never overwhelmed.</p>
+                    <a href="#" class="btn-details light">Learn More</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Wave Divider -->
-    <div class="wave-divider flip">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#fff"/>
-        </svg>
-    </div>
+        <!-- Formats Section -->
+        <section class="formats-section" id="formats">
+            <h2 class="section-title">Real Learning Formats</h2>
+            <div class="formats-grid">
+                <div class="format-card">
+                    <h3>Interactive Lessons</h3>
+                    <p>Live sessions with real teachers, group discussions, and hands-on practice activities.</p>
+                </div>
+                <div class="format-card">
+                    <h3>Branded Study Pages</h3>
+                    <p>Custom learning pages with your school's branding and personalized student dashboards.</p>
+                </div>
+                <div class="format-card">
+                    <h3>Video Courses</h3>
+                    <p>Pre-recorded video lessons, pronunciation guides, and cultural immersion content.</p>
+                </div>
+                <div class="format-card">
+                    <h3>Mobile Learning</h3>
+                    <p>Learn on the go with our mobile app — flashcards, quizzes, and audio lessons anywhere.</p>
+                </div>
+            </div>
+        </section>
 
-    <!-- ========== TESTIMONIALS ========== -->
-    <section class="testimonials">
-        <div class="section-header">
-            <span class="section-label">Testimonials</span>
-            <h2>What Students Are Saying</h2>
-        </div>
-        <div class="testimonial-content">
-            <p class="testimonial-quote">"Emma's teaching style is absolutely wonderful! I went from barely speaking English to giving presentations at work in just 6 months. Her patience and encouragement made all the difference."</p>
-            <div class="testimonial-author">— Maria Santos, Brazil</div>
-        </div>
-    </section>
-
-    <!-- Wave Divider -->
-    <div class="wave-divider">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#f0f9ff"/>
-        </svg>
-    </div>
-
-    <!-- ========== TUNE IN ========== -->
-    <section class="tune-in">
-        <div class="tune-in-header">
-            <h2>Tune In!</h2>
-        </div>
-        <div class="tune-in-grid">
-            <div class="tune-card">
-                <div class="tune-icon">▶️</div>
-                <h3>YouTube Channel</h3>
-                <p>Free weekly videos covering grammar tips, vocabulary building, pronunciation guides, and fun English challenges!</p>
-                <div class="episode-list">
-                    <h4>Popular Episodes</h4>
-                    <div class="episode-item">
-                        <span>How to Stop Saying "Very"</span>
-                        <span>▶</span>
+        <!-- Newsletter / CTA Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-grid">
+                <div class="newsletter-image">
+                    <div style="font-size: 8rem;">😊</div>
+                </div>
+                <div class="newsletter-right">
+                    <div class="newsletter-main">
+                        <h2>Subscribe to News for Students and Language Learners</h2>
+                        <p>Get weekly tips, free resources, and exclusive course discounts delivered to your inbox.</p>
+                        <div class="newsletter-rocket">🚀</div>
                     </div>
-                    <div class="episode-item">
-                        <span>10 Common Mistakes to Avoid</span>
-                        <span>▶</span>
-                    </div>
-                    <div class="episode-item">
-                        <span>English Slang You Need to Know</span>
-                        <span>▶</span>
-                    </div>
-                    <div class="episode-item">
-                        <span>Pronunciation: TH Sound</span>
-                        <span>▶</span>
+                    <div class="newsletter-bottom">
+                        <div class="newsletter-card yellow">
+                            <h4>Learn About Our Launches for Effective Language Learning</h4>
+                            <p>Be the first to know about new courses, features, and special offers.</p>
+                            <a href="#" class="btn-subscribe dark">Subscribe</a>
+                        </div>
+                        <div class="newsletter-card dark">
+                            <h4>Join the English Academy Community to Use All Platform Tools</h4>
+                            <p>Connect with learners worldwide and access premium features.</p>
+                            <a href="#" class="btn-subscribe white">Join Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="tune-card">
-                <div class="tune-icon">🎙️</div>
-                <h3>The Podcast</h3>
-                <p>Listen and learn on the go! Real conversations about everyday topics with transcripts and vocabulary lists.</p>
-                <div class="episode-list">
-                    <h4>Popular Episodes</h4>
-                    <div class="episode-item">
-                        <span>Episode 1: Morning Routines</span>
-                        <span>▶</span>
-                    </div>
-                    <div class="episode-item">
-                        <span>Episode 2: Travel Stories</span>
-                        <span>▶</span>
-                    </div>
-                    <div class="episode-item">
-                        <span>Episode 3: Food & Culture</span>
-                        <span>▶</span>
-                    </div>
-                    <div class="episode-item">
-                        <span>Episode 4: Job Interviews</span>
-                        <span>▶</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Wave Divider -->
-    <div class="wave-divider flip">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#ffd6e0"/>
-        </svg>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 English Academy. All rights reserved. | Making language learning accessible for everyone.</p>
+        </footer>
+
     </div>
-
-    <!-- ========== MAILING LIST ========== -->
-    <section class="mailing-list">
-        <div class="mailing-content">
-            <div class="mail-icon">💌</div>
-            <h2>Join the Mailing List</h2>
-            <p>Get free English learning tips, exclusive discounts, and weekly motivation delivered straight to your inbox!</p>
-            <form class="mailing-form">
-                <input type="email" placeholder="Your email address" required>
-                <button type="submit">Join</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- ========== FOOTER ========== -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>English Academy</h3>
-                <p style="color: #ccc; line-height: 1.7;">Making English learning fun, effective, and accessible for everyone around the world.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#">Free Grammar Guide</a></li>
-                    <li><a href="#">Vocabulary Lists</a></li>
-                    <li><a href="#">Practice Tests</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <ul>
-                    <li><a href="#">📧 hello@englishacademy.com</a></li>
-                    <li><a href="#"> +1 (555) 123-4567</a></li>
-                    <li><a href="#">📍 Online Worldwide</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 English Academy with Emma. All rights reserved. | Made with 💛</p>
-        </div>
-    </footer>
 
 </body>
 </html>
