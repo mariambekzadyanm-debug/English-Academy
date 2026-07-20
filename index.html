@@ -1,1 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master English with Sarah - Online Tutoring</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9ff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #ffd700;
+            color: #333;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image-placeholder {
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #667eea;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: #667eea;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: #f8f9ff;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: #f8f9ff;
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            color: #667eea;
+            opacity: 0.3;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+
+        .testimonial-text {
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #667eea;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .pricing .section-title {
+            color: white;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .pricing-card {
+            background: white;
+            color: #333;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .pricing-card.featured {
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffd700;
+            color: #333;
+            padding: 8px 30px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .price {
+            font-size: 3rem;
+            color: #667eea;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .pricing-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-card li::before {
+            content: '✓';
+            color: #667eea;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* Contact Form */
+        .contact {
+            padding: 80px 0;
+            background: #f8f9ff;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content,
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-image-placeholder {
+                width: 300px;
+                height: 300px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Transform Your English Skills Today</h1>
+                    <p>Join over 500+ students who've unlocked their potential with personalized lessons tailored to your goals. From business English to casual conversation - I've got you covered!</p>
+                    <a href="#contact" class="btn">Book Your Free Trial Lesson</a>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-placeholder">
+                        <span style="font-size: 8rem;">👩‍🏫</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Learn With Me?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalized Approach</h3>
+                    <p>Every student is unique. I create custom lesson plans based on your learning style, interests, and objectives.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Flexible Schedule</h3>
+                    <p>Morning person or night owl? Choose time slots that fit your lifestyle. Lessons available 7 days a week.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Real Conversations</h3>
+                    <p>Move beyond textbooks. Practice with real-world scenarios, current topics, and practical communication skills.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Track Progress</h3>
+                    <p>Regular assessments and feedback help you see your improvement. Celebrate milestones together!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Meet Your Instructor</h2>
+                    <p>Hi! I'm Sarah Mitchell, a certified TEFL instructor with 8 years of experience teaching English to students from 30+ countries.</p>
+                    <p>I specialize in helping professionals advance their careers, students ace their exams, and travelers gain confidence in speaking.</p>
+                    <p>My teaching philosophy is simple: make learning enjoyable, relevant, and effective. No boring grammar drills - just engaging, interactive lessons that actually work.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div>Students Taught</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3000+</div>
+                            <div>Lessons Given</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div>Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="hero-image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <span style="font-size: 8rem;">👩</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Students Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Sarah helped me prepare for my job interview in English. I got the position at a multinational company! Her business English lessons were incredibly practical.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div>
+                            <strong>Marcus Chen</strong>
+                            <div>Software Engineer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">I was so nervous about speaking, but Sarah created such a comfortable environment. After 6 months, I can now have fluent conversations with confidence!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div>
+                            <strong>Elena Rodriguez</strong>
+                            <div>University Student</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The IELTS preparation course was amazing. I improved from 6.0 to 7.5 in just 3 months. Sarah knows exactly what examiners look for.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div>
+                            <strong>Yuki Tanaka</strong>
+                            <div>Graduate Student</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Choose Your Learning Path</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter Pack</h3>
+                    <div class="price">$25<span>/lesson</span></div>
+                    <ul>
+                        <li>45-minute sessions</li>
+                        <li>Flexible scheduling</li>
+                        <li>Lesson materials included</li>
+                        <li>Email support</li>
+                        <li>Progress tracking</li>
+                    </ul>
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="badge">Most Popular</div>
+                    <h3>Pro Learner</h3>
+                    <div class="price">$90<span>/month</span></div>
+                    <ul>
+                        <li>8 lessons per month</li>
+                        <li>60-minute sessions</li>
+                        <li>Custom curriculum</li>
+                        <li>Homework assignments</li>
+                        <li>Priority booking</li>
+                        <li>24/7 WhatsApp support</li>
+                    </ul>
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Intensive Course</h3>
+                    <div class="price">$160<span>/month</span></div>
+                    <ul>
+                        <li>16 lessons per month</li>
+                        <li>60-minute sessions</li>
+                        <li>Exam preparation</li>
+                        <li>Daily practice tasks</li>
+                        <li>Mock tests included</li>
+                        <li>Certificate upon completion</li>
+                    </ul>
+                    <a href="#contact" class="btn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Start Your Journey</h2>
+            <div class="contact-content">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="level">Current English Level</label>
+                        <select id="level" name="level" required>
+                            <option value="">Select your level</option>
+                            <option value="beginner">Beginner (A1-A2)</option>
+                            <option value="intermediate">Intermediate (B1-B2)</option>
+                            <option value="advanced">Advanced (C1-C2)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="goals">Your Learning Goals</label>
+                        <textarea id="goals" name="goals" placeholder="Tell me what you want to achieve..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Sarah Mitchell English Tutoring. All rights reserved.</p>
+            <p style="margin-top: 10px;">📧 sarah@englishmastery.com | 🌐 Available Worldwide</p>
+        </div>
+    </footer>
+
+</body>
+</html>
