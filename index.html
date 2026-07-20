@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master English with Sarah - Home</title>
+    <title>English Academy - Learn English with Emma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,312 +14,866 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9ff;
+            font-family: 'Nunito', sans-serif;
+            color: #4a4a4a;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        h1, h2, h3, h4 {
+            font-family: 'Fredoka One', cursive;
         }
 
         /* Navigation */
         nav {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: #fff;
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
         }
 
         .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .logo {
+            font-family: 'Fredoka One', cursive;
             font-size: 1.8rem;
-            font-weight: bold;
-            color: #667eea;
+            color: #e8a87c;
             text-decoration: none;
+        }
+
+        .logo span {
+            color: #85cdca;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 35px;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
-            font-weight: 600;
+            color: #4a4a4a;
+            font-weight: 700;
+            font-size: 0.95rem;
             transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .nav-links a:hover {
-            color: #667eea;
-        }
-
+        .nav-links a:hover,
         .nav-links a.active {
-            color: #667eea;
+            color: #e8a87c;
+        }
+
+        .nav-btn {
+            background: #e8a87c;
+            color: white !important;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s !important;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(232, 168, 124, 0.4);
+            color: white !important;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 100px 0;
+            background: linear-gradient(135deg, #fef9ef 0%, #fff5f5 50%, #f0f9ff 100%);
+            padding: 80px 0 120px;
             position: relative;
             overflow: hidden;
         }
 
         .hero::before {
+            content: '✨';
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero::after {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
+            top: 20%;
+            right: 8%;
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
         .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
-            position: relative;
-            z-index: 1;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.95;
-        }
-
-        .btn {
+        .hero-text .tagline {
             display: inline-block;
-            padding: 15px 40px;
-            background: #ffd700;
-            color: #333;
-            text-decoration: none;
+            background: #ffd6e0;
+            color: #d4728c;
+            padding: 8px 20px;
             border-radius: 50px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: #4a4a4a;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: #e8a87c;
+            position: relative;
+        }
+
+        .hero-text h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: #ffd6e0;
+            z-index: -1;
+            border-radius: 10px;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #e8a87c;
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-block;
             border: none;
             cursor: pointer;
         }
 
-        .btn:hover {
+        .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(232, 168, 124, 0.4);
         }
 
         .btn-secondary {
             background: white;
-            color: #667eea;
-            margin-left: 15px;
+            color: #4a4a4a;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-block;
+            border: 2px solid #e8a87c;
+        }
+
+        .btn-secondary:hover {
+            background: #e8a87c;
+            color: white;
+            transform: translateY(-3px);
         }
 
         .hero-image {
             text-align: center;
+            position: relative;
         }
 
         .hero-image img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
         }
 
-        /* Features Section */
-        .features {
-            padding: 80px 0;
+        .hero-badge {
+            position: absolute;
             background: white;
+            padding: 15px 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            font-weight: 700;
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #667eea;
+        .hero-badge.top {
+            top: 10%;
+            right: 0;
+            color: #85cdca;
         }
 
-        .section-subtitle {
+        .hero-badge.bottom {
+            bottom: 15%;
+            left: 0;
+            color: #e8a87c;
+        }
+
+        /* Wave Divider */
+        .wave-divider {
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave-divider svg {
+            width: 100%;
+            height: 80px;
+        }
+
+        .wave-divider.flip {
+            transform: rotate(180deg);
+        }
+
+        /* Programs Section */
+        .programs {
+            background: #fef9ef;
+            padding: 80px 0;
+        }
+
+        .section-header {
             text-align: center;
-            font-size: 1.1rem;
-            color: #666;
             margin-bottom: 60px;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .feature-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-card img {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 20px;
-            border-radius: 50%;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
+        .section-label {
+            display: inline-block;
+            background: #ffd6e0;
+            color: #d4728c;
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             margin-bottom: 15px;
-            color: #333;
         }
 
-        /* Image Gallery Section */
-        .gallery-section {
-            padding: 80px 0;
-            background: #f8f9ff;
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: #4a4a4a;
+            margin-bottom: 15px;
         }
 
-        .gallery-grid {
+        .section-header p {
+            font-size: 1.1rem;
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .programs-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            margin-top: 50px;
         }
 
-        .gallery-item {
+        .program-card {
+            background: white;
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
             position: relative;
             overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            height: 300px;
+            cursor: pointer;
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
+        .program-card::before {
+            content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(102, 126, 234, 0.9), transparent);
-            color: white;
-            padding: 30px 20px 20px;
-            transform: translateY(100%);
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #e8a87c, #ffd6e0, #85cdca);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .program-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .program-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .program-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 25px;
             transition: transform 0.3s;
         }
 
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
+        .program-card:hover .program-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .program-card:nth-child(1) .program-icon { background: #fff5f5; }
+        .program-card:nth-child(2) .program-icon { background: #f0f9ff; }
+        .program-card:nth-child(3) .program-icon { background: #f0fff4; }
+
+        .program-card h3 {
+            font-size: 1.5rem;
+            color: #4a4a4a;
+            margin-bottom: 15px;
+        }
+
+        .program-card p {
+            color: #888;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .program-link {
+            color: #e8a87c;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .program-link:hover {
+            color: #d4728c;
+            letter-spacing: 2px;
+        }
+
+        /* About Teacher Section */
+        .about-teacher {
+            background: #fff;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .about-image .decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .about-image .decoration.pink {
+            background: #ffd6e0;
+            top: -20px;
+            left: -20px;
+        }
+
+        .about-image .decoration.blue {
+            background: #d4f1f4;
+            bottom: -20px;
+            right: -20px;
+        }
+
+        .about-text .teacher-label {
+            display: inline-block;
+            background: #d4f1f4;
+            color: #5ba4a8;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .about-text h2 {
+            font-size: 2.8rem;
+            color: #4a4a4a;
+            margin-bottom: 20px;
+        }
+
+        .about-text h2 span {
+            color: #e8a87c;
+        }
+
+        .about-text p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .teacher-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.5rem;
+            color: #e8a87c;
+        }
+
+        .stat-label {
+            color: #888;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Featured Section */
+        .featured {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .featured-text {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .featured-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .featured-logos span {
+            font-family: 'Fredoka One', cursive;
+            font-size: 1.5rem;
+            color: #ccc;
+            transition: color 0.3s;
+        }
+
+        .featured-logos span:hover {
+            color: #e8a87c;
+        }
+
+        /* Recommended Program */
+        .recommended {
+            background: #fef9ef;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .recommended-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .recommended-text .rec-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #ffd6e0;
+            color: #d4728c;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .recommended-text .rec-label::before {
+            content: '';
+            font-size: 1.2rem;
+        }
+
+        .recommended-text h2 {
+            font-size: 2.5rem;
+            color: #4a4a4a;
+            margin-bottom: 10px;
+        }
+
+        .recommended-text .program-name {
+            font-family: 'Fredoka One', cursive;
+            font-size: 3rem;
+            color: #e8a87c;
+            margin-bottom: 20px;
+        }
+
+        .recommended-text p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .recommended-image {
+            position: relative;
+        }
+
+        .recommended-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .recommended-image .mockup {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         /* Testimonials */
         .testimonials {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial-card {
-            background: #f8f9ff;
-            padding: 40px;
-            border-radius: 20px;
+            background: #fff;
+            padding: 100px 0;
             position: relative;
         }
 
-        .testimonial-card img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-
-        .testimonial-text {
-            margin-bottom: 20px;
-            font-style: italic;
-            color: #555;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 100px 0;
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
             text-align: center;
         }
 
-        .cta-section h2 {
+        .testimonial-quote {
+            font-size: 1.5rem;
+            color: #4a4a4a;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-quote::before,
+        .testimonial-quote::after {
+            content: '←';
+            color: #e8a87c;
+            font-size: 2rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .testimonial-quote::before {
+            left: -40px;
+        }
+
+        .testimonial-quote::after {
+            content: '→';
+            right: -40px;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #e8a87c;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        /* Tune In Section */
+        .tune-in {
+            background: #f0f9ff;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .tune-in-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .tune-in-header h2 {
+            font-size: 3rem;
+            color: #4a4a4a;
+            display: inline-block;
+            position: relative;
+        }
+
+        .tune-in-header h2::before {
+            content: '↗';
+            position: absolute;
+            top: -30px;
+            left: -40px;
+            color: #e8a87c;
+            font-size: 2rem;
+            transform: rotate(-20deg);
+        }
+
+        .tune-in-header h2::after {
+            content: '🎙️';
+            position: absolute;
+            top: -20px;
+            right: -60px;
+            font-size: 2rem;
+        }
+
+        .tune-in-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .tune-card {
+            background: white;
+            border-radius: 25px;
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.4s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .tune-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .tune-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #ffd6e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 2.5rem;
+            margin: 0 auto 25px;
+            transition: transform 0.3s;
+        }
+
+        .tune-card:hover .tune-icon {
+            transform: scale(1.1);
+        }
+
+        .tune-card:nth-child(2) .tune-icon {
+            background: #d4f1f4;
+        }
+
+        .tune-card h3 {
+            font-size: 1.8rem;
+            color: #4a4a4a;
+            margin-bottom: 15px;
+        }
+
+        .tune-card p {
+            color: #888;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .episode-list {
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        .episode-list h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #999;
+            margin-bottom: 15px;
+        }
+
+        .episode-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .episode-item:hover {
+            padding-left: 10px;
+            color: #e8a87c;
+        }
+
+        .episode-item span:last-child {
+            color: #e8a87c;
+            font-weight: 700;
+        }
+
+        /* Mailing List */
+        .mailing-list {
+            background: linear-gradient(135deg, #ffd6e0 0%, #ffe8d6 100%);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .mailing-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .mailing-content .mail-icon {
+            font-size: 3rem;
             margin-bottom: 20px;
         }
 
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            opacity: 0.95;
+        .mailing-content h2 {
+            font-size: 2.5rem;
+            color: #4a4a4a;
+            margin-bottom: 15px;
+        }
+
+        .mailing-content p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .mailing-form {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .mailing-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 16px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-family: 'Nunito', sans-serif;
+            outline: none;
+        }
+
+        .mailing-form button {
+            background: #e8a87c;
+            color: white;
+            padding: 16px 35px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .mailing-form button:hover {
+            background: #d4956a;
+            transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
-            background: #2d3748;
+            background: #4a4a4a;
             color: white;
-            padding: 60px 0 30px;
+            padding: 80px 0 30px;
         }
 
         .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .footer-section h3 {
+            font-size: 1.2rem;
             margin-bottom: 20px;
-            color: #ffd700;
+            color: #e8a87c;
         }
 
         .footer-section ul {
@@ -326,31 +881,26 @@
         }
 
         .footer-section ul li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .footer-section a {
-            color: white;
+            color: #ccc;
             text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s;
+            transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
         .footer-section a:hover {
-            opacity: 1;
-        }
-
-        .footer-section img {
-            width: 40px;
-            margin-right: 10px;
-            vertical-align: middle;
+            color: #e8a87c;
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            opacity: 0.8;
+            color: #999;
+            font-size: 0.9rem;
         }
 
         /* Responsive */
@@ -359,21 +909,34 @@
                 display: none;
             }
 
-            .hero-content {
+            .hero-content,
+            .about-content,
+            .recommended-content,
+            .tune-in-grid {
                 grid-template-columns: 1fr;
             }
 
-            .hero h1 {
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-header h2,
+            .about-text h2,
+            .recommended-text h2 {
                 font-size: 2rem;
             }
 
-            .hero-image img {
-                max-width: 100%;
+            .recommended-text .program-name {
+                font-size: 2rem;
             }
 
-            .btn-secondary {
-                margin-left: 0;
-                margin-top: 15px;
+            .tune-in-header h2 {
+                font-size: 2rem;
+            }
+
+            .testimonial-quote::before,
+            .testimonial-quote::after {
+                display: none;
             }
         }
     </style>
@@ -383,197 +946,289 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo"> EnglishWithSarah</a>
+            <a href="index.html" class="logo">English<span>Academy</span></a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="lessons.html">Lessons</a></li>
+                <li><a href="courses.html">Courses</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="nav-btn">Enroll Now</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Transform Your English Skills Today</h1>
-                    <p>Join over 500+ students who've unlocked their potential with personalized lessons tailored to your goals. From business English to casual conversation - I've got you covered!</p>
-                    <a href="contact.html" class="btn">Book Free Trial</a>
-                    <a href="lessons.html" class="btn btn-secondary">View Lessons</a>
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="tagline">🌟 Welcome to English Academy</span>
+                <h1>Learn English the <span>Fun Way</span> with Emma!</h1>
+                <p>Join thousands of happy students mastering English through interactive lessons, real conversations, and personalized guidance. Your journey to fluency starts here!</p>
+                <div class="hero-buttons">
+                    <a href="courses.html" class="btn-primary">Explore Courses</a>
+                    <a href="about.html" class="btn-secondary">Meet Emma</a>
                 </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1544717305-2782a9e6ce78?w=500" alt="English Teacher">
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1544717305-2782a9e6ce78?w=500" alt="Emma - English Teacher">
+                <div class="hero-badge top">⭐ 500+ Students</div>
+                <div class="hero-badge bottom">📚 50+ Lessons</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#fef9ef"/>
+        </svg>
+    </div>
+
+    <!-- Programs Section -->
+    <section class="programs">
+        <div class="section-header">
+            <span class="section-label">Our Programs</span>
+            <h2>Choose Your Learning Path</h2>
+            <p>From beginners to advanced learners, we have the perfect course for you</p>
+        </div>
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="program-icon">📖</div>
+                <h3>Grammar Mastery</h3>
+                <p>Build a strong foundation with clear explanations and practical exercises for all grammar topics.</p>
+                <a href="courses.html" class="program-link">Learn More →</a>
+            </div>
+            <div class="program-card">
+                <div class="program-icon">🗣️</div>
+                <h3>Speaking Confidence</h3>
+                <p>Overcome your fear of speaking with real conversations and pronunciation practice.</p>
+                <a href="courses.html" class="program-link">Learn More →</a>
+            </div>
+            <div class="program-card">
+                <div class="program-icon">✈️</div>
+                <h3>Business English</h3>
+                <p>Master professional communication for meetings, presentations, and workplace success.</p>
+                <a href="courses.html" class="program-link">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider flip">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#fff"/>
+        </svg>
+    </div>
+
+    <!-- About Teacher -->
+    <section class="about-teacher">
+        <div class="about-content">
+            <div class="about-image">
+                <div class="decoration pink"></div>
+                <div class="decoration blue"></div>
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500" alt="Emma - Teacher">
+            </div>
+            <div class="about-text">
+                <span class="teacher-label">👩‍🏫 Your Teacher</span>
+                <h2>Meet <span>Emma</span> Johnson</h2>
+                <p>Hi there! I'm Emma, a certified English teacher with over 8 years of experience helping students from 40+ countries achieve their language goals.</p>
+                <p>I believe learning English should be enjoyable, not stressful. My lessons combine fun activities, real-world practice, and personalized feedback to help you progress quickly.</p>
+                <p>Whether you're preparing for an exam, advancing your career, or just want to travel confidently - I'm here to help you every step of the way!</p>
+                <div class="teacher-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">Years Teaching</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Happy Students</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">40+</div>
+                        <div class="stat-label">Countries</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Why Learn With Me?</h2>
-            <p class="section-subtitle">Discover what makes my teaching method effective and enjoyable</p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=200" alt="Personalized Learning">
-                    <h3>Personalized Approach</h3>
-                    <p>Every student is unique. I create custom lesson plans based on your learning style, interests, and objectives.</p>
-                </div>
-                <div class="feature-card">
-                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=200" alt="Flexible Schedule">
-                    <h3>Flexible Schedule</h3>
-                    <p>Morning person or night owl? Choose time slots that fit your lifestyle. Lessons available 7 days a week.</p>
-                </div>
-                <div class="feature-card">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=200" alt="Real Conversations">
-                    <h3>Real Conversations</h3>
-                    <p>Move beyond textbooks. Practice with real-world scenarios, current topics, and practical communication skills.</p>
-                </div>
-                <div class="feature-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200" alt="Track Progress">
-                    <h3>Track Progress</h3>
-                    <p>Regular assessments and feedback help you see your improvement. Celebrate milestones together!</p>
-                </div>
+    <!-- Featured -->
+    <section class="featured">
+        <div class="featured-text">Trusted & Featured In</div>
+        <div class="featured-logos">
+            <span>📰 EduNews</span>
+            <span>🎓 LearnMag</span>
+            <span>📺 GlobalEd</span>
+            <span>🌐 LangWorld</span>
+            <span>📚 BookReview</span>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#fef9ef"/>
+        </svg>
+    </div>
+
+    <!-- Recommended Program -->
+    <section class="recommended">
+        <div class="recommended-content">
+            <div class="recommended-text">
+                <span class="rec-label">Recommended</span>
+                <h2>My Most Popular Program</h2>
+                <div class="program-name">Fluent English Journey</div>
+                <p>A comprehensive 12-week program where your English skills truly blossom. From basic conversations to advanced discussions, this course covers everything you need to become confident in English.</p>
+                <p>Includes live sessions, practice materials, homework feedback, and a supportive community of learners from around the world.</p>
+                <a href="courses.html" class="btn-primary">Enroll Now</a>
+            </div>
+            <div class="recommended-image">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600" alt="Students Learning">
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery-section">
-        <div class="container">
-            <h2 class="section-title">Learning Moments</h2>
-            <p class="section-subtitle">See what happens in our online classroom</p>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400" alt="Online Class">
-                    <div class="gallery-overlay">
-                        <h3>Interactive Lessons</h3>
-                        <p>Engaging one-on-one sessions</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400" alt="Business English">
-                    <div class="gallery-overlay">
-                        <h3>Business English</h3>
-                        <p>Professional communication skills</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400" alt="Group Learning">
-                    <div class="gallery-overlay">
-                        <h3>Group Sessions</h3>
-                        <p>Learn with peers worldwide</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400" alt="Study Materials">
-                    <div class="gallery-overlay">
-                        <h3>Quality Materials</h3>
-                        <p>Carefully prepared resources</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400" alt="Student Success">
-                    <div class="gallery-overlay">
-                        <h3>Student Success</h3>
-                        <p>Celebrating achievements</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400" alt="Cultural Exchange">
-                    <div class="gallery-overlay">
-                        <h3>Cultural Exchange</h3>
-                        <p>Learn language & culture</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Wave Divider -->
+    <div class="wave-divider flip">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#fff"/>
+        </svg>
+    </div>
 
     <!-- Testimonials -->
     <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Students Say</h2>
-            <p class="section-subtitle">Real stories from real students</p>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Student">
-                    <p class="testimonial-text">Sarah helped me prepare for my job interview in English. I got the position at a multinational company! Her business English lessons were incredibly practical.</p>
-                    <div class="testimonial-author">Marcus Chen - Software Engineer</div>
+        <div class="section-header">
+            <span class="section-label">Testimonials</span>
+            <h2>What Students Are Saying</h2>
+        </div>
+        <div class="testimonial-content">
+            <p class="testimonial-quote">"Emma's teaching style is absolutely wonderful! I went from barely speaking English to giving presentations at work in just 6 months. Her patience and encouragement made all the difference."</p>
+            <div class="testimonial-author">— Maria Santos, Brazil</div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#f0f9ff"/>
+        </svg>
+    </div>
+
+    <!-- Tune In Section -->
+    <section class="tune-in">
+        <div class="tune-in-header">
+            <h2>Tune In!</h2>
+        </div>
+        <div class="tune-in-grid">
+            <div class="tune-card">
+                <div class="tune-icon">▶️</div>
+                <h3>YouTube Channel</h3>
+                <p>Free weekly videos covering grammar tips, vocabulary building, pronunciation guides, and fun English challenges!</p>
+                <div class="episode-list">
+                    <h4>Popular Episodes</h4>
+                    <div class="episode-item">
+                        <span>How to Stop Saying "Very"</span>
+                        <span>▶</span>
+                    </div>
+                    <div class="episode-item">
+                        <span>10 Common Mistakes to Avoid</span>
+                        <span>▶</span>
+                    </div>
+                    <div class="episode-item">
+                        <span>English Slang You Need to Know</span>
+                        <span>▶</span>
+                    </div>
+                    <div class="episode-item">
+                        <span>Pronunciation: TH Sound</span>
+                        <span>▶</span>
+                    </div>
                 </div>
-                <div class="testimonial-card">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Student">
-                    <p class="testimonial-text">I was so nervous about speaking, but Sarah created such a comfortable environment. After 6 months, I can now have fluent conversations with confidence!</p>
-                    <div class="testimonial-author">Elena Rodriguez - University Student</div>
-                </div>
-                <div class="testimonial-card">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="Student">
-                    <p class="testimonial-text">The IELTS preparation course was amazing. I improved from 6.0 to 7.5 in just 3 months. Sarah knows exactly what examiners look for.</p>
-                    <div class="testimonial-author">Yuki Tanaka - Graduate Student</div>
+            </div>
+            <div class="tune-card">
+                <div class="tune-icon">🎙️</div>
+                <h3>The Podcast</h3>
+                <p>Listen and learn on the go! Real conversations about everyday topics with transcripts and vocabulary lists.</p>
+                <div class="episode-list">
+                    <h4>Popular Episodes</h4>
+                    <div class="episode-item">
+                        <span>Episode 1: Morning Routines</span>
+                        <span>▶</span>
+                    </div>
+                    <div class="episode-item">
+                        <span>Episode 2: Travel Stories</span>
+                        <span>▶</span>
+                    </div>
+                    <div class="episode-item">
+                        <span>Episode 3: Food & Culture</span>
+                        <span>▶</span>
+                    </div>
+                    <div class="episode-item">
+                        <span>Episode 4: Job Interviews</span>
+                        <span>▶</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Start Your English Journey?</h2>
-            <p>Book your free trial lesson today and experience the difference</p>
-            <a href="contact.html" class="btn">Get Started Now</a>
+    <!-- Wave Divider -->
+    <div class="wave-divider flip">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#ffd6e0"/>
+        </svg>
+    </div>
+
+    <!-- Mailing List -->
+    <section class="mailing-list">
+        <div class="mailing-content">
+            <div class="mail-icon">💌</div>
+            <h2>Join the Mailing List</h2>
+            <p>Get free English learning tips, exclusive discounts, and weekly motivation delivered straight to your inbox!</p>
+            <form class="mailing-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Join</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="lessons.html">Lessons</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="lessons.html">Business English</a></li>
-                        <li><a href="lessons.html">IELTS Preparation</a></li>
-                        <li><a href="lessons.html">Conversational English</a></li>
-                        <li><a href="lessons.html">Grammar Classes</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p>📧 sarah@englishmastery.com</p>
-                    <p>📱 +1 (555) 123-4567</p>
-                    <p>🌐 Available Worldwide</p>
-                    <p style="margin-top: 20px;">
-                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/32/733/733547.png" alt="Facebook"></a>
-                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/32/733/733558.png" alt="Twitter"></a>
-                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/32/1384/1384015.png" alt="Instagram"></a>
-                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/32/1384/1384060.png" alt="LinkedIn"></a>
-                    </p>
-                </div>
-                <div class="footer-section">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe for free learning tips!</p>
-                    <form style="margin-top: 15px;">
-                        <input type="email" placeholder="Your email" style="padding: 10px; border-radius: 5px; border: none; width: 100%; margin-bottom: 10px;">
-                        <button class="btn" style="width: 100%; padding: 10px;">Subscribe</button>
-                    </form>
-                </div>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>English Academy</h3>
+                <p style="color: #ccc; line-height: 1.7;">Making English learning fun, effective, and accessible for everyone around the world.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Sarah Mitchell English Tutoring. All rights reserved.</p>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Free Grammar Guide</a></li>
+                    <li><a href="#">Vocabulary Lists</a></li>
+                    <li><a href="#">Practice Tests</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">📧 hello@englishacademy.com</a></li>
+                    <li><a href="#">📱 +1 (555) 123-4567</a></li>
+                    <li><a href="#">📍 Online Worldwide</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 English Academy with Emma. All rights reserved. | Made with 💛</p>
         </div>
     </footer>
 
