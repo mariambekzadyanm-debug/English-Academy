@@ -1,10 +1,9 @@
-<!-- index.html - HOME PAGE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Academy - Learn English with Emma</title>
+    <title>English Academy - Learn with Emma</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -17,13 +16,14 @@
             font-family: 'Nunito', sans-serif;
             color: #4a4a4a;
             overflow-x: hidden;
+            background: #fff;
         }
 
         h1, h2, h3, h4 {
             font-family: 'Fredoka One', cursive;
         }
 
-        /* Navigation */
+        /* ========== NAVIGATION ========== */
         nav {
             background: #fff;
             padding: 20px 0;
@@ -86,10 +86,9 @@
         .nav-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 20px rgba(232, 168, 124, 0.4);
-            color: white !important;
         }
 
-        /* Hero Section */
+        /* ========== HERO SECTION ========== */
         .hero {
             background: linear-gradient(135deg, #fef9ef 0%, #fff5f5 50%, #f0f9ff 100%);
             padding: 80px 0 120px;
@@ -100,24 +99,24 @@
         .hero::before {
             content: '✨';
             position: absolute;
-            top: 10%;
-            left: 5%;
+            top: 15%;
+            left: 8%;
             font-size: 2rem;
             animation: float 3s ease-in-out infinite;
         }
 
         .hero::after {
-            content: '';
+            content: '⭐';
             position: absolute;
-            top: 20%;
-            right: 8%;
-            font-size: 2rem;
-            animation: float 3s ease-in-out infinite 1s;
+            top: 25%;
+            right: 10%;
+            font-size: 1.5rem;
+            animation: float 3s ease-in-out infinite 1.5s;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
         }
 
         .hero-content {
@@ -226,7 +225,13 @@
         .hero-image img {
             max-width: 100%;
             height: auto;
+            max-height: 550px;
             filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+            transition: transform 0.5s;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.05) rotate(-2deg);
         }
 
         .hero-badge {
@@ -236,21 +241,22 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             font-weight: 700;
+            animation: float 3s ease-in-out infinite;
         }
 
         .hero-badge.top {
-            top: 10%;
-            right: 0;
+            top: 5%;
+            right: 5%;
             color: #85cdca;
         }
 
         .hero-badge.bottom {
-            bottom: 15%;
+            bottom: 10%;
             left: 0;
             color: #e8a87c;
         }
 
-        /* Wave Divider */
+        /* ========== WAVE DIVIDERS ========== */
         .wave-divider {
             width: 100%;
             overflow: hidden;
@@ -260,16 +266,17 @@
         .wave-divider svg {
             width: 100%;
             height: 80px;
+            display: block;
         }
 
         .wave-divider.flip {
             transform: rotate(180deg);
         }
 
-        /* Programs Section */
+        /* ========== PROGRAMS SECTION ========== */
         .programs {
             background: #fef9ef;
-            padding: 80px 0;
+            padding: 100px 0;
         }
 
         .section-header {
@@ -333,6 +340,7 @@
             height: 5px;
             background: linear-gradient(90deg, #e8a87c, #ffd6e0, #85cdca);
             transform: scaleX(0);
+            transform-origin: left;
             transition: transform 0.4s;
         }
 
@@ -358,7 +366,7 @@
         }
 
         .program-card:hover .program-icon {
-            transform: scale(1.1) rotate(5deg);
+            transform: scale(1.15) rotate(5deg);
         }
 
         .program-card:nth-child(1) .program-icon { background: #fff5f5; }
@@ -392,7 +400,7 @@
             letter-spacing: 2px;
         }
 
-        /* About Teacher Section */
+        /* ========== ABOUT TEACHER ========== */
         .about-teacher {
             background: #fff;
             padding: 100px 0;
@@ -417,6 +425,11 @@
             width: 100%;
             border-radius: 30px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.02);
         }
 
         .about-image .decoration {
@@ -478,6 +491,14 @@
 
         .stat-item {
             text-align: center;
+            background: #fef9ef;
+            padding: 20px 30px;
+            border-radius: 20px;
+            transition: transform 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
         }
 
         .stat-number {
@@ -492,7 +513,7 @@
             font-weight: 600;
         }
 
-        /* Featured Section */
+        /* ========== FEATURED ========== */
         .featured {
             background: #f8f9fa;
             padding: 60px 0;
@@ -523,14 +544,16 @@
             font-family: 'Fredoka One', cursive;
             font-size: 1.5rem;
             color: #ccc;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            cursor: pointer;
         }
 
         .featured-logos span:hover {
             color: #e8a87c;
+            transform: scale(1.1);
         }
 
-        /* Recommended Program */
+        /* ========== RECOMMENDED ========== */
         .recommended {
             background: #fef9ef;
             padding: 100px 0;
@@ -562,11 +585,6 @@
             margin-bottom: 20px;
         }
 
-        .recommended-text .rec-label::before {
-            content: '';
-            font-size: 1.2rem;
-        }
-
         .recommended-text h2 {
             font-size: 2.5rem;
             color: #4a4a4a;
@@ -595,19 +613,14 @@
             width: 100%;
             border-radius: 20px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            transition: transform 0.5s;
         }
 
-        .recommended-image .mockup {
-            position: absolute;
-            bottom: -30px;
-            right: -30px;
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .recommended-image:hover img {
+            transform: scale(1.03);
         }
 
-        /* Testimonials */
+        /* ========== TESTIMONIALS ========== */
         .testimonials {
             background: #fff;
             padding: 100px 0;
@@ -657,7 +670,7 @@
             font-size: 0.9rem;
         }
 
-        /* Tune In Section */
+        /* ========== TUNE IN ========== */
         .tune-in {
             background: #f0f9ff;
             padding: 100px 0;
@@ -709,12 +722,12 @@
             border-radius: 25px;
             padding: 50px 40px;
             text-align: center;
-            transition: all 0.4s;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
 
         .tune-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-10px) scale(1.02);
             box-shadow: 0 20px 50px rgba(0,0,0,0.1);
         }
 
@@ -732,7 +745,7 @@
         }
 
         .tune-card:hover .tune-icon {
-            transform: scale(1.1);
+            transform: scale(1.15) rotate(10deg);
         }
 
         .tune-card:nth-child(2) .tune-icon {
@@ -784,7 +797,7 @@
             font-weight: 700;
         }
 
-        /* Mailing List */
+        /* ========== MAILING LIST ========== */
         .mailing-list {
             background: linear-gradient(135deg, #ffd6e0 0%, #ffe8d6 100%);
             padding: 100px 0;
@@ -853,7 +866,7 @@
             transform: translateY(-2px);
         }
 
-        /* Footer */
+        /* ========== FOOTER ========== */
         footer {
             background: #4a4a4a;
             color: white;
@@ -903,7 +916,7 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive */
+        /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -943,7 +956,7 @@
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- ========== NAVIGATION ========== -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">English<span>Academy</span></a>
@@ -958,7 +971,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ========== HERO SECTION ========== -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
@@ -971,7 +984,8 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1544717305-2782a9e6ce78?w=500" alt="Emma - English Teacher">
+                <!-- Emma waving - main hero character -->
+                <img src="emma-waving.png" alt="Emma - Your English Teacher">
                 <div class="hero-badge top">⭐ 500+ Students</div>
                 <div class="hero-badge bottom">📚 50+ Lessons</div>
             </div>
@@ -985,7 +999,7 @@
         </svg>
     </div>
 
-    <!-- Programs Section -->
+    <!-- ========== PROGRAMS SECTION ========== -->
     <section class="programs">
         <div class="section-header">
             <span class="section-label">Our Programs</span>
@@ -1021,216 +1035,5 @@
         </svg>
     </div>
 
-    <!-- About Teacher -->
+    <!-- ========== ABOUT TEACHER ========== -->
     <section class="about-teacher">
-        <div class="about-content">
-            <div class="about-image">
-                <div class="decoration pink"></div>
-                <div class="decoration blue"></div>
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500" alt="Emma - Teacher">
-            </div>
-            <div class="about-text">
-                <span class="teacher-label">👩‍🏫 Your Teacher</span>
-                <h2>Meet <span>Emma</span> Johnson</h2>
-                <p>Hi there! I'm Emma, a certified English teacher with over 8 years of experience helping students from 40+ countries achieve their language goals.</p>
-                <p>I believe learning English should be enjoyable, not stressful. My lessons combine fun activities, real-world practice, and personalized feedback to help you progress quickly.</p>
-                <p>Whether you're preparing for an exam, advancing your career, or just want to travel confidently - I'm here to help you every step of the way!</p>
-                <div class="teacher-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">8+</div>
-                        <div class="stat-label">Years Teaching</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Happy Students</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">40+</div>
-                        <div class="stat-label">Countries</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured -->
-    <section class="featured">
-        <div class="featured-text">Trusted & Featured In</div>
-        <div class="featured-logos">
-            <span>📰 EduNews</span>
-            <span>🎓 LearnMag</span>
-            <span>📺 GlobalEd</span>
-            <span>🌐 LangWorld</span>
-            <span>📚 BookReview</span>
-        </div>
-    </section>
-
-    <!-- Wave Divider -->
-    <div class="wave-divider">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#fef9ef"/>
-        </svg>
-    </div>
-
-    <!-- Recommended Program -->
-    <section class="recommended">
-        <div class="recommended-content">
-            <div class="recommended-text">
-                <span class="rec-label">Recommended</span>
-                <h2>My Most Popular Program</h2>
-                <div class="program-name">Fluent English Journey</div>
-                <p>A comprehensive 12-week program where your English skills truly blossom. From basic conversations to advanced discussions, this course covers everything you need to become confident in English.</p>
-                <p>Includes live sessions, practice materials, homework feedback, and a supportive community of learners from around the world.</p>
-                <a href="courses.html" class="btn-primary">Enroll Now</a>
-            </div>
-            <div class="recommended-image">
-                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600" alt="Students Learning">
-            </div>
-        </div>
-    </section>
-
-    <!-- Wave Divider -->
-    <div class="wave-divider flip">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#fff"/>
-        </svg>
-    </div>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="section-header">
-            <span class="section-label">Testimonials</span>
-            <h2>What Students Are Saying</h2>
-        </div>
-        <div class="testimonial-content">
-            <p class="testimonial-quote">"Emma's teaching style is absolutely wonderful! I went from barely speaking English to giving presentations at work in just 6 months. Her patience and encouragement made all the difference."</p>
-            <div class="testimonial-author">— Maria Santos, Brazil</div>
-        </div>
-    </section>
-
-    <!-- Wave Divider -->
-    <div class="wave-divider">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#f0f9ff"/>
-        </svg>
-    </div>
-
-    <!-- Tune In Section -->
-    <section class="tune-in">
-        <div class="tune-in-header">
-            <h2>Tune In!</h2>
-        </div>
-        <div class="tune-in-grid">
-            <div class="tune-card">
-                <div class="tune-icon">▶️</div>
-                <h3>YouTube Channel</h3>
-                <p>Free weekly videos covering grammar tips, vocabulary building, pronunciation guides, and fun English challenges!</p>
-                <div class="episode-list">
-                    <h4>Popular Episodes</h4>
-                    <div class="episode-item">
-                        <span>How to Stop Saying "Very"</span>
-                        <span>▶</span>
-                    </div>
-                    <div class="episode-item">
-                        <span>10 Common Mistakes to Avoid</span>
-                        <span>▶</span>
-                    </div>
-                    <div class="episode-item">
-                        <span>English Slang You Need to Know</span>
-                        <span>▶</span>
-                    </div>
-                    <div class="episode-item">
-                        <span>Pronunciation: TH Sound</span>
-                        <span>▶</span>
-                    </div>
-                </div>
-            </div>
-            <div class="tune-card">
-                <div class="tune-icon">🎙️</div>
-                <h3>The Podcast</h3>
-                <p>Listen and learn on the go! Real conversations about everyday topics with transcripts and vocabulary lists.</p>
-                <div class="episode-list">
-                    <h4>Popular Episodes</h4>
-                    <div class="episode-item">
-                        <span>Episode 1: Morning Routines</span>
-                        <span>▶</span>
-                    </div>
-                    <div class="episode-item">
-                        <span>Episode 2: Travel Stories</span>
-                        <span>▶</span>
-                    </div>
-                    <div class="episode-item">
-                        <span>Episode 3: Food & Culture</span>
-                        <span>▶</span>
-                    </div>
-                    <div class="episode-item">
-                        <span>Episode 4: Job Interviews</span>
-                        <span>▶</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Wave Divider -->
-    <div class="wave-divider flip">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#ffd6e0"/>
-        </svg>
-    </div>
-
-    <!-- Mailing List -->
-    <section class="mailing-list">
-        <div class="mailing-content">
-            <div class="mail-icon">💌</div>
-            <h2>Join the Mailing List</h2>
-            <p>Get free English learning tips, exclusive discounts, and weekly motivation delivered straight to your inbox!</p>
-            <form class="mailing-form">
-                <input type="email" placeholder="Your email address" required>
-                <button type="submit">Join</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>English Academy</h3>
-                <p style="color: #ccc; line-height: 1.7;">Making English learning fun, effective, and accessible for everyone around the world.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="#">Free Grammar Guide</a></li>
-                    <li><a href="#">Vocabulary Lists</a></li>
-                    <li><a href="#">Practice Tests</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <ul>
-                    <li><a href="#">📧 hello@englishacademy.com</a></li>
-                    <li><a href="#">📱 +1 (555) 123-4567</a></li>
-                    <li><a href="#">📍 Online Worldwide</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 English Academy with Emma. All rights reserved. | Made with 💛</p>
-        </div>
-    </footer>
-
-</body>
-</html>
